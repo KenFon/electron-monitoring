@@ -6,9 +6,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never",
+    "build": "electron-builder build --win",
     "deploy": "electron-builder build --win --publish always",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build"
   },
   "keywords": [],
   "author": {
@@ -17,8 +17,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-log": "^4.3.0",
-    "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.3.5",
     "os-utils": "0.0.14",
     "update-electron-app": "^2.0.1"
