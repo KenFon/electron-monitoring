@@ -9,7 +9,7 @@
     "make": "electron-forge make",
     "build": "electron-builder build --win",
     "deploy": "electron-builder build --win --publish always",
-    "dist": "npm run make"
+    "dist": "npm run build"
   },
   "keywords": [],
   "author": {
@@ -18,20 +18,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@electron-forge/maker-dmg": "^6.0.0-beta.54",
-    "electron-log": "^4.3.0",
-    "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.3.5",
     "os-utils": "0.0.14",
     "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
     "electron": "^10.1.5",
-    "electron-builder": "^22.9.1",
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54"
+    "electron-builder": "^22.9.1"
   }
 }
