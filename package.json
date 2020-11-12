@@ -6,13 +6,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never",
+    "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder build --mac --win --publish always",
     "dist": "npm run build && electron-builder"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KenFon/electron-monitoring.git"
   },
   "keywords": [],
   "author": {
