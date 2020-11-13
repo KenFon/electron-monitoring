@@ -1,23 +1,28 @@
-os: unstable	
-cache:	  
-  - node_modules	
-environment:	  
-  GH_TOKEN:	88ddfae315d16e19e4a45eac91b10b5e9a1515d2
-install:	  
-  - ps: Install-Product node $env:nodejs_version	  
-  - set CI=true	  
-  - npm install -g npm@latest	  
-  - set PATH=%APPDATA%\npm;%PATH%	  
-  - npm install	
-matrix:	  
-  fast_finish: true	
-build: off	
-version: '{build}'	
-shallow_clone: true	
-clone_depth: 1	
-build_script:	  
-  - npm run dist
-deploy:
-- provider: GitHub
-  auth_token:
-    secure: 90jAPJokE2Aopsz95YeugkHJkfptqYwhSoaZMLN7um8hiwGySdZ6TClI5pWVXddw
+version: 0.1.{build}
+
+platform:
+  - x64
+
+cache:
+  - node_modules
+  - app\node_modules
+  - '%APPDATA%\npm-cache'
+  - '%USERPROFILE%\.electron'
+
+init:
+  - git config --global core.autocrlf input
+
+install:
+  - ps: Install-Product node 6 x64
+  - git reset --hard HEAD
+  - npm install npm -g
+  - npm install electron-builder@next # force install next version to test electron-builder
+  - npm install
+  - npm prune
+
+build_script:
+  - node --version
+  - npm --version
+  - npm run release
+
+test: off

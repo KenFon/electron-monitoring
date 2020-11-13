@@ -25,5 +25,26 @@
   "devDependencies": {
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1"
+  },
+  "build":{
+    "appId": "app_id_here",
+    "productName": "app description",
+    "files":[
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "linux":{
+      "target":[
+        "deb"
+      ]
+    },
+    "publish":{
+      "provider": "github"
+    },
+    "win":{
+      "publish":["github"],
+      "remoteReleases": "https://github.com/KenFon/electron-monitoring"
+    }
   }
 }
